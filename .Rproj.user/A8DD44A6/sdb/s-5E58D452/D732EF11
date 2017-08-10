@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "library(tidyr)\nlibrary(rvest)\n\nurl <- \"http://www.serebii.net/events/dex/\"\ndex_entry <- sprintf(\"%03d\", seq(1, 802))\nfull_url <- paste(url, dex_entry, \".shtml\", sep='')",
+    "created" : 1502396610238.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1738181817",
+    "id" : "D732EF11",
+    "lastKnownWriteTime" : 1502396620,
+    "last_content_update" : 1502396620247,
+    "path" : "~/self_projects/pkmn_giveaways/scrape_serebii.R",
+    "project_path" : "scrape_serebii.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

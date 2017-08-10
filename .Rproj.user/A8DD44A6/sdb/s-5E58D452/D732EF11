@@ -1,14 +1,14 @@
 {
     "collab_server" : "",
-    "contents" : "library(tidyr)\nlibrary(rvest)\n\nurl <- \"http://www.serebii.net/events/dex/\"\ndex_entry <- sprintf(\"%03d\", seq(1, 802))\nfull_url <- paste(url, dex_entry, \".shtml\", sep='')",
+    "contents" : "library(tidyr)\nlibrary(rvest)\n\nurl <- \"http://www.serebii.net/events/dex/\"\ndex_entry <- sprintf(\"%03d\", seq(1, 802))\nfull_url <- paste(url, dex_entry, \".shtml\", sep='')\n\n# how to handle if one year has multiple releases ie 2006 has america and japand\nget_poke_data <- function(url){\n  html <- read_html(url)\n  # first row is name, \n  # even rows are location, odd are year\n  # if length() is one, it has not been released\n  data <- html_nodes(html, '.dextab b , u') %>% html_text()\n  n <- length(data)\n  if (n==1){\n    location <- NA\n    year <- NA\n  }\n  else{\n    location <- data[seq(3, n, by=2)]\n    year <- data[seq(2, n, by=2)]\n  }\n  df <- data.frame(location, year)\n  df$name <- data[1]\n  \n  return(df)\n}",
     "created" : 1502396610238.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "1738181817",
+    "hash" : "987144693",
     "id" : "D732EF11",
-    "lastKnownWriteTime" : 1502396620,
-    "last_content_update" : 1502396620247,
+    "lastKnownWriteTime" : 1502398173,
+    "last_content_update" : 1502398173087,
     "path" : "~/self_projects/pkmn_giveaways/scrape_serebii.R",
     "project_path" : "scrape_serebii.R",
     "properties" : {
